@@ -6,3 +6,4 @@ matplotlib
 streamlit 
 imageio
 pandas
+ploty
