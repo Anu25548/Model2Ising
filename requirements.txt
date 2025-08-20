@@ -4,6 +4,9 @@ numpy
 scipy
 matplotlib
 streamlit 
+plotly>=5.0.0
 imageio
 pandas
-ploty
+ase
+py3Dmol
+
