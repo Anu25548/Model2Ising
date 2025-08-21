@@ -232,7 +232,7 @@ def run_ising_sim(N, n_eq, n_samples, T_arr, JkB, seed, Tc_exp, maxT, algo, hist
         if hist_T is not None and np.isclose(T_real, hist_T, atol=max(1e-6, (T_arr[1]-T_arr[0])/2)):
             hist_M = m_abs_samples.copy()
         if idx % max(1, len(T_arr)//5) == 0:
-            progress.update(int((idx+1)/len(T_arr)*100), text=random.choice(funny))
+            progress.progress((idx+1)/len(T_arr), text=random.choice(spin_msgs))
     progress.update(100, text="Phase transition drama at 100% 🔥")
 
     return (
