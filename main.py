@@ -233,7 +233,7 @@ def run_ising_sim(N, n_eq, n_samples, T_arr, JkB, seed, Tc_exp, maxT, algo, hist
             hist_M = m_abs_samples.copy()
         if idx % max(1, len(T_arr)//5) == 0:
             progress.progress((idx+1)/len(T_arr), text=random.choice(funny))
-    progress.update(100, text="Phase transition drama at 100% 🔥")
+    progress.progress(1.0, text="Phase transition drama at 100% 🍿")
 
     return (
         np.array(E_av), np.array(m_abs_av), np.array(C_av), np.array(chi_av),
