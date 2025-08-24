@@ -13,8 +13,7 @@ import random
 # Interactive graphing
 import plotly.graph_objects as go
 # raw values
-Mabs = np.abs(M)                          # absolute magnetization
-m_abs_err = np.std(M) / np.sqrt(len(M))
+
 
 # =============================
 # --------- THEME / CSS -------
@@ -506,6 +505,8 @@ if run_sim:
 
     # Phase diagram + snapshots tab
     with tabs[4]:
+        Mabs = np.abs(M)                          # absolute magnetization
+        m_abs_err = np.std(M) / np.sqrt(len(M))
         st.subheader("2D Ising Phase + Spin Snapshots")
         fig5, ax5 = plt.subplots(figsize=(7,4))
         ax5.axvspan(minT, Tc_exp, alpha=0.25, color='tab:blue', label="Ferromagnetic (ordered)")
