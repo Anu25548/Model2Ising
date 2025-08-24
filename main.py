@@ -12,7 +12,7 @@ import random
 
 # Interactive graphing
 import plotly.graph_objects as go
-M = np.array(magnetization_data)          # raw values
+# raw values
 Mabs = np.abs(M)                          # absolute magnetization
 m_abs_err = np.std(M) / np.sqrt(len(M))
 
