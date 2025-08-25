@@ -431,6 +431,25 @@ if run_sim:
             with c2:
                 lattice_snapshots_panel()
                 st.caption("Spin-stagram: ordered vs disordered spin states ✨")
+                st.markdown("""
+---
+#### **🔥 What does this graph show?**
+- **Y-axis (Heat Capacity):** How much energy the system needs to heat up by one unit. High value: small T change → lots of energy absorbed/released.
+- **X-axis (Temperature):** Heating from low to high.
+
+#### **Physics & Interpretation**
+
+- **$T = T_c$:** Sharp peak! This is a universal sign of a **second-order phase transition**. System's ability to absorb/lose energy is maximized at criticality.
+- **$T < T_c$:** Ordered spins, less energy fluctuation, lower heat capacity.
+- **$T > T_c$:** Random spins, heat capacity drops—no more phase change.
+
+#### **What to notice:**
+
+- The **peak in heat capacity is exactly at the phase transition ($T_c$)**.
+- Heat capacity is a sensitive thermometer for transitions—experiment and simulation always agree here on the critical point.
+- Actual shape may broaden for smaller lattices, but position of the peak is robust.
+---
+        """)
 
         # Heat capacity Tab
         with tabs[1]:
@@ -505,8 +524,6 @@ if run_sim:
 
     # Phase diagram + snapshots tab
     with tabs[4]:
-        Mabs = np.abs(M)                          # absolute magnetization
-        m_abs_err = np.std(M) / np.sqrt(len(M))
         st.subheader("2D Ising Phase + Spin Snapshots")
         fig5, ax5 = plt.subplots(figsize=(7,4))
         ax5.axvspan(minT, Tc_exp, alpha=0.25, color='tab:blue', label="Ferromagnetic (ordered)")
