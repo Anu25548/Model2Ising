@@ -624,6 +624,8 @@ if run_sim:
                 if exp_data is not None and 'T' in exp_data.columns and 'M' in exp_data.columns:
                     figM.add_trace(go.Scatter(x=exp_data['T'], y=exp_data['M'], mode='markers', name='Exp M', marker=dict(symbol='circle-open')))
                 st.plotly_chart(figM, use_container_width=True)
+                st.image(img_below, caption="Below Tc 🧊", use_column_width=True)
+                st.image(img_above, caption="Above Tc 🔥", use_column_width=True)
             with c2:
                 lattice_snapshots_panel()
                 if mode == "Pro":
